@@ -89,7 +89,6 @@
 
 				<div class='pull-right'>
 					<ul class="pagination">
-			<%-- 검색 없어서 수정 처리함 --%>
 						<%--           <c:if test="${pageMaker.prev}">
               <li class="paginate_button previous"><a href="#">Previous</a>
               </li>
@@ -131,11 +130,11 @@
 				<input type='hidden' name='pageNum' value='${pageMaker.cri.pageNum}'>
 				<input type='hidden' name='amount' value='${pageMaker.cri.amount}'>
 
-			<%-- 검색 없어서 수정 처리함 --%>
-			<%-- 	<input type='hidden' name='type'
+			
+			<input type='hidden' name='type'
 					value='<c:out value="${ pageMaker.cri.type }"/>'> <input
 					type='hidden' name='keyword'
-					value='<c:out value="${ pageMaker.cri.keyword }"/>'> --%>
+					value='<c:out value="${ pageMaker.cri.keyword }"/>'>
 
 
 			</form>
