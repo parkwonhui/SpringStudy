@@ -30,7 +30,10 @@ public class BoardController {
 		System.out.println(cri);
 		System.out.println(service.getList(cri));
 		model.addAttribute("list", service.getList(cri));
-		model.addAttribute("pageMaker", new PageDTO(cri, 123));
+		//model.addAttribute("pageMaker", new PageDTO(cri, 123));
+		int total = service.getTotal(cri);
+		log.info("total:"+total);
+		model.addAttribute("pageMaker", new PageDTO(cri, total));
 	}
 	
 	@PostMapping("/register")
@@ -77,6 +80,8 @@ public class BoardController {
 		rttr.addAttribute("amount", cri.getAmount());
 		return "redirect:/board/list";
 	}
+	
+	
 	
 	
 
