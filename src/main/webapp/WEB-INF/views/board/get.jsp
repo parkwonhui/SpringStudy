@@ -120,6 +120,32 @@ replyService.get(10, function(data){
 </div>
 <!-- /.row -->
 
+<!-- 댓글 추가 -->
+<div class="row">
+	<div class="col-lg-12">
+		<!-- /.panel -->
+		<div class="panel panel-default">
+			<div class="penel-heading">
+				<i class="fa fa-comments fa-fw"></i> Reply
+			</div>
+			<!-- /.panel-heaing -->
+			<div class="panel-body">
+				<ul class="chat">
+					<li class="left clearfix" data-rno='12'>
+						<div>
+							<div class="header">
+								<strong class="primary-font">user00</strong>
+								<small class="pull-right text-muted">2018-01-01 13:13</small>
+							</div>
+							<p>Good job!</p>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div><!-- panel panel-default -->
+	</div> <!-- col-lg-12 -->	
+</div>	<!-- row -->
+
 <script type="text/javascript">
 $(document).ready(function() {
   
