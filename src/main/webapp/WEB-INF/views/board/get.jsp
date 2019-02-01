@@ -3,8 +3,51 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <%@include file="../includes/header.jsp"%>
+<script type="text/javascript" src="/resources/js/reply.js"></script>
+<script>
+$(function(){
+	console.log(replyService);
+});
 
+console.log("=============");
+console.log("JS TEST");
 
+var bnoValue = '<c:out value="${board.bno}" />';
+replyService.add(
+		{reply:"JS Test", replyer:"tester", bno:bnoValue},
+		function(result){
+			alert("RESULT:"+result);
+		}
+);
+
+replyService.getList({bno:bnoValue, page:1}, function(list){
+	for(var i = 0, len = list.length || 0; i < len; ++i){
+		console.log(list[i]);
+	}
+});
+
+replyService.remove(36, function(count){
+	console.log(count);
+	
+	if("success" == count)
+		alert("REMOVED");
+}, function(err){
+	alert('ERROR...');	
+});
+
+// 22번 댓글 수정
+replyService.update({
+	rno : 22,
+	bno : bnoValue,
+	reply : "Modified Reply..."
+}, function(result){
+	alert("수정 완료...");	
+});
+
+replyService.get(10, function(data){
+	console.log(data);
+});
+</script>
 <div class="row">
   <div class="col-lg-12">
     <h1 class="page-header">Board Read</h1>
